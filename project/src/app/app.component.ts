@@ -1,16 +1,20 @@
-import { Component, Inject } from '@angular/core'
-import { Http } from '@angular/http'
-
+import { Component, Inject } from '@angular/core';
+import { Http } from '@angular/http';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'Angular Project';
-  fotos = []
+  title: string = 'Angular Project';
+  fotos: Object[] = []
 
-  constructor(@Inject(Http) http) {
-
+  constructor(http: Http) {
+    http.get('http://localhost:3000/v1/fotos')
+        .map(resposta => resposta.json())
+        .subscribe(
+          jsonFotos => this.fotos = jsonFotos,
+          erro => console.log(erro)
+        );
   }
 
 }
