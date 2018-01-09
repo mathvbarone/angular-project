@@ -1,0 +1,11 @@
+<div class="jumbotron  jumbotron-fluid">
+    <h1 class="title display-2 text-center">Caelum Pic</h1>
+  </div>
+  
+  <div class="container">
+    <div class="row">
+      <painel *ngFor="let foto of fotos" titulo={{foto.titulo}} class="col-12 col-sm-6 col-md-4 col-lg-2">
+          <foto titulo={{foto.titulo}} url="{{foto.url}}"></foto>
+      </painel>
+    </div>
+  </div>
