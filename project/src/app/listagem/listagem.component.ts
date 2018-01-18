@@ -1,12 +1,13 @@
 import { Component, Inject } from '@angular/core';
 import { Http } from '@angular/http';
+import { FotoComponent } from '../foto/foto.component';
 @Component({
   selector: 'listagem',
   templateUrl: './listagem.component.html',
-  styleUrls: ['./listagem.component.css']
+  styleUrls: ['./listagem.component.scss']
 })
 export class ListagemComponent {
-  fotos: Object[] = [];
+  fotos: FotoComponent[] = [];
 
   constructor(http: Http) {
     http.get('http://localhost:3000/v1/fotos')
