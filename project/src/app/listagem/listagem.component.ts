@@ -2,7 +2,8 @@ import { Component, Inject } from '@angular/core';
 import { Http } from '@angular/http';
 @Component({
   selector: 'listagem',
-  templateUrl: './listagem.component.html'
+  templateUrl: './listagem.component.html',
+  styleUrls: ['./listagem.component.css']
 })
 export class ListagemComponent {
   fotos: Object[] = [];

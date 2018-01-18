@@ -5,14 +5,14 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-          <form class="form-inline">
-            <a [routerLink]="['/cadastro']" class="btn btn-primary mb-3">Nova foto</a>
-            <input #inputBusca type="search" class="form-control"  placeholder="Campo de busca">
+          <form class="form-inline listagem-filtro">
+            <a [routerLink]="['/cadastro']" class="btn btn-primary">Nova foto</a>
+            <input #inputBusca type="search" class="filtro-input form-control col-10"  placeholder="Campo de busca">
           </form>
       </div>
     </div>
     <div class="row">
-      <painel *ngFor="let foto of fotos | filtroPorTitulo:inputBusca.value" titulo={{foto.titulo}} class="col-12 col-sm-6 col-md-4 col-lg-2 mb-3">
+      <painel *ngFor="let foto of fotos | filtroPorTitulo:inputBusca.value" titulo={{foto.titulo}} class="col-12 col-sm-6 col-md-4 col-lg-2 mt-3">
           <foto titulo={{foto.titulo}} url="{{foto.url}}"></foto>
       </painel>
     </div>
