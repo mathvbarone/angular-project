@@ -7,15 +7,15 @@
         <form class="col-sm-6">
             <div class="form-group">
                 <label for="InputTitle">Titulo</label>
-                <input [value]="foto.titulo" type="text" class="form-control" id="InputTitle" placeholder="Digite o titulo da imagem">
+                <input [value]="foto.titulo" type="text" class="form-control" id="InputTitle">
             </div>
             <div class="form-group">
                 <label for="InputUrl">URL</label>
-                <input [value]="foto.url" type="text" class="form-control" id="InputUrl" placeholder="Digite a URL da imagem">
+                <input [value]="foto.url" type="text" class="form-control" id="InputUrl">
             </div>
             <div class="form-group">
                 <label for="TextAreaDescricao">Descrição</label>
-                <textarea class="form-control" id="TextAreaDescricao" rows="3" placeholder="Digite uma descrição">{{foto.descricao}}</textarea>
+                <textarea class="form-control" id="TextAreaDescricao" rows="3">{{ foto.descricao }}</textarea>
             </div>
 
             <a [routerLink]="['']" class="btn btn-primary col-sm-3 mb-3">Voltar</a>
