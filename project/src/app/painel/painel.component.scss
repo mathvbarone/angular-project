@@ -1,3 +1,7 @@
 .card{
-    box-shadow: 0 0 13px rgba(0, 0, 0, 0.37);
+    transition: ease-in-out 0.2s all;
+    &:hover{
+        box-shadow: 0 0 13px rgba(0, 0, 0, 0.37);
+        transform: translateY(10px) scale(1.04);
+    }
 }
