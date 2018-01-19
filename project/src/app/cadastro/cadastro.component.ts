@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
     templateUrl: './cadastro.component.html'
 })
 
-export class CadastroComponent{}
+export class CadastroComponent{
+    foto: Object = {}
+}
