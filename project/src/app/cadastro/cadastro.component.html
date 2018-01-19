@@ -1,3 +1,26 @@
-<div class="jumbotron  jumbotron-fluid">
+<header class="jumbotron  jumbotron-fluid">
     <h1 class="title display-2 text-center">Cadastro de Fotos</h1>
-</div>
+</header>
+<section class="container">
+    <div class="row">
+        <form class="col-sm-6">
+            <div class="form-group">
+                <label for="InputTitle">Titulo</label>
+                <input type="text" class="form-control" id="InputTitle" placeholder="Digite o titulo da imagem">
+            </div>
+            <div class="form-group">
+                <label for="InputUrl">URL</label>
+                <input type="text" class="form-control" id="InputUrl" placeholder="Digite a URL da imagem">
+            </div>
+            <div class="form-group">
+                <label for="TextAreaDescricao">Descrição</label>
+                <textarea class="form-control" id="TextAreaDescricao" rows="3" placeholder="Digite uma descrição"></textarea>
+            </div>
+
+            <a [routerLink]="['']" class="btn btn-primary col-sm-3 mb-3">Voltar</a>
+
+            <button type="submit" class="col-sm-3 btn btn-success mb-3">Salvar</button>
+
+        </form>
+    </div>
+</section>
