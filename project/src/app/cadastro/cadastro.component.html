@@ -9,6 +9,7 @@
             <div class="form-group">
                 <label for="InputTitle">Titulo</label>
                 <input
+                name="titulo" [(ngModel)]="foto.titulo"
                 (input)="foto.titulo = $event.target.value"
                 [value]="foto.titulo"
                 class="form-control"
@@ -42,5 +43,11 @@
             <button type="submit" class="col-sm-3 btn btn-success mb-3">Salvar</button>
 
         </form>
+        <aside class="col-sm-6">
+            <painel titulo="{{ foto.titulo }}">
+                <foto url="{{ foto.url }}" titulo="{{ foto.titulo }}"></foto>
+            </painel>
+
+        </aside>
     </div>
 </section>
