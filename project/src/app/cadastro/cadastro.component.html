@@ -4,15 +4,18 @@
 
 <section class="container">
     <div class="row">
-        <form class="col-sm-6">
+        <form (submit)="salvar($event)" class="col-sm-6">
+
             <div class="form-group">
                 <label for="InputTitle">Titulo</label>
                 <input [value]="foto.titulo" type="text" class="form-control" id="InputTitle">
             </div>
+
             <div class="form-group">
                 <label for="InputUrl">URL</label>
                 <input [value]="foto.url" type="text" class="form-control" id="InputUrl">
             </div>
+            
             <div class="form-group">
                 <label for="TextAreaDescricao">Descrição</label>
                 <textarea class="form-control" id="TextAreaDescricao" rows="3">{{ foto.descricao }}</textarea>
