@@ -29,7 +29,7 @@ export class CadastroComponent {
                     )
                     .subscribe(
                         () => {
-                            console.log("Fotos salva com sucesso")
+                            console.log('Foto salva com sucesso');
                         }
                         , erro => console.log(erro));
     }

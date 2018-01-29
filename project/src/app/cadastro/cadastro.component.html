@@ -4,27 +4,41 @@
 
 <section class="container">
     <div class="row">
-        <form (submit)="salvar($event)" class="col-sm-6">
+        <form #formCadastro="ngForm" (submit)="salvar($event)" class="col-sm-6">
 
             <div class="form-group">
                 <label for="InputTitle">Titulo</label>
                 <input
-                name="titulo" [(ngModel)]="foto.titulo"
+                required
+                name="titulo"
+                [(ngModel)]="foto.titulo"
+                #titulo = "ngModel"
                 (input)="foto.titulo = $event.target.value"
                 [value]="foto.titulo"
                 class="form-control"
                 type="text" id="InputTitle">
-                
+
+                <span *ngIf="titulo.invalid" class="form-control alert-danger mt-2">
+                    Título obrigatório
+                </span>
             </div>
 
             <div class="form-group">
                 <label for="InputUrl">URL</label>
                 <input
+                required
+                name="url"
+                [(ngModel)]="foto.url"
+                #url = "ngModel"
                 (input)="foto.url = $event.target.value"
                 [value]="foto.url"
-                type="text"
+                class="form-control"
                 class="form-control"
                 id="InputUrl">
+                
+                <span *ngIf="url.invalid" class="form-control alert-danger mt-2">
+                    URL obrigatório
+                </span>
             </div>
 
             <div class="form-group">
@@ -40,14 +54,13 @@
 
             <a [routerLink]="['']" class="btn btn-primary col-sm-3 mb-3">Voltar</a>
 
-            <button type="submit" class="col-sm-3 btn btn-success mb-3">Salvar</button>
-
+            <button type="submit" class="col-sm-3 btn btn-success mb-3" [disabled]="formCadastro.form.invalid">Salvar</button>
         </form>
+
         <aside class="col-sm-6">
             <painel titulo="{{ foto.titulo }}">
                 <foto url="{{ foto.url }}" titulo="{{ foto.titulo }}"></foto>
             </painel>
-
         </aside>
     </div>
 </section>
